@@ -11,15 +11,28 @@ pygame.mixer.init()
 
 # Daftar suara untuk setiap tuts
 sounds = [
-    pygame.mixer.Sound('asset/Peking/Peking_11.wav'),
-    pygame.mixer.Sound('asset/Peking/Peking_12.wav'),
-    pygame.mixer.Sound('asset/Peking/Peking_13.wav'),
-    pygame.mixer.Sound('asset/Peking/Peking_14.wav'),
-    pygame.mixer.Sound('asset/Peking/Peking_15.wav'),
-    pygame.mixer.Sound('asset/Bonang Barung/BB_21.wav')
+    pygame.mixer.Sound(f'asset/Kantil/Kantil_{i}.mp3') for i in range(1, 10)
 ]
 
-NOTES = [1, 2, 3, 4, 5, 6]  # Daftar NOTEs sesuai dengan daftar sound
+# Kendang
+# sounds = [
+#     pygame.mixer.Sound(f'asset/Kendang/Kendang_{i}.mp3') for i in range(1, 13)
+# ]
+
+# Konstant
+# sounds = [
+#     pygame.mixer.Sound('asset/Konstant/CengCeng_1.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/CengCeng_2.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/CengCeng_3.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/CengCeng_4.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/CengCeng_5.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/Gong_1.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/Gong_2.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/Kemong.mp3'),
+#     pygame.mixer.Sound('asset/Konstant/Kempli.mp3'),
+# ]
+
+NOTES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 NOTE_VELOCITY = 127
 FPS_SHOW = False
 WINDOW_NAME = "VirtualGamelan"
