@@ -10,9 +10,18 @@ pygame.init()
 pygame.mixer.init()
 
 # Daftar suara untuk setiap tuts
-# sounds = [
-#     pygame.mixer.Sound(f'asset/Kantil/Kantil_{i}.mp3') for i in range(1, 10)
-# ]
+sounds = [
+    pygame.mixer.Sound('asset/Kantil/Kantil_1.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_2.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_3.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_4.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_5.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_6.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_7.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_8.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_9.mp3'),
+    pygame.mixer.Sound('asset/Kantil/Kantil_10.mp3'),
+]
 
 # Kendang
 # sounds = [
@@ -20,19 +29,20 @@ pygame.mixer.init()
 # ]
 
 # Konstant
-sounds = [
-    pygame.mixer.Sound('asset/Konstant/CengCeng_1.mp3'),
-    pygame.mixer.Sound('asset/Konstant/CengCeng_2.mp3'),
-    pygame.mixer.Sound('asset/Konstant/CengCeng_3.mp3'),
-    pygame.mixer.Sound('asset/Konstant/CengCeng_4.mp3'),
-    pygame.mixer.Sound('asset/Konstant/CengCeng_5.mp3'),
-    pygame.mixer.Sound('asset/Konstant/Gong_1.mp3'),
-    pygame.mixer.Sound('asset/Konstant/Gong_2.mp3'),
+sounds_kempli = [
+    # pygame.mixer.Sound('asset/Konstant/CengCeng_1.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/CengCeng_2.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/CengCeng_3.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/CengCeng_4.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/CengCeng_5.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/Gong_1.mp3'),
+    # pygame.mixer.Sound('asset/Konstant/Gong_2.mp3'),
     pygame.mixer.Sound('asset/Konstant/Kemong.mp3'),
     pygame.mixer.Sound('asset/Konstant/Kempli.mp3'),
 ]
 
-NOTES = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+NOTES_kempli = [1, 2, ]  # Daftar NOTEs sesuai dengan daftar sound
+NOTES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Daftar NOTEs sesuai dengan daftar sound
 NOTE_VELOCITY = 127
 FPS_SHOW = False
 WINDOW_NAME = "VirtualGamelan"
@@ -40,7 +50,7 @@ WINDOW_NAME = "VirtualGamelan"
 DEBUG = False
 
 CONSTANT_BACKGROUND = True
-MINIMUM_DISPLAY_WIDTH = 800
+MINIMUM_DISPLAY_WIDTH = 1900
 MAXIMUM_DISPLAY_WIDTH = 1900
 RECOGNIZER_WIDTH = 500
 KERNEL_SIZE = 0.042
@@ -108,6 +118,9 @@ blankOverlay = np.zeros((displayHeight, displayWidth, 3), dtype=np.uint8)
 cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_AUTOSIZE)
 cv2.resizeWindow(WINDOW_NAME, displayWidth, displayHeight)
 
+# cv2.namedWindow(WINDOW_NAME, cv2.WND_PROP_FULLSCREEN)
+# cv2.setWindowProperty(WINDOW_NAME, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
 displayRects = []
 scaledRects = []
 frameRects = []
@@ -160,7 +173,7 @@ if FPS_SHOW:
     readTime = 0
 
 # Initialize HSV tracking
-lower_color = np.array([0, 101, 221])
+lower_color = np.array([0, 191, 0])
 upper_color = np.array([179, 255, 255])
 
 while True:
@@ -272,4 +285,3 @@ while True:
 video.release()
 cv2.destroyAllWindows()
 pygame.quit()
-
